@@ -1,0 +1,16 @@
+{
+  "name": "twitch-bonus-claimer",
+  "version": "1.0.0",
+  "description": "Automatically claim watch bonus on twitch.tv",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitch",
+    "bonus",
+    "claim"
+  ],
+  "author": "@iamreliq",
+  "license": "ISC"
+}
