@@ -66,14 +66,14 @@ const claimBonus = async (button: HTMLElement) => {
     if (isClaiming) return;
     isClaiming = true;
 
-    try {
-        // Wait a random short delay to feel more human (500ms - 2000ms)
-        const delay = 500 + Math.random() * 1500;
+    // Wait a random short delay to feel more human (500ms - 2000ms)
+    const delay = 500 + Math.random() * 1500;
 
-        console.log(`[Twitch Bonus Claimer] Bonus detected! Claiming in ${(delay / 1000).toFixed(1)}s...`);
+    console.log(`[Twitch Bonus Claimer] Bonus detected! Claiming in ${(delay / 1000).toFixed(1)}s...`);
 
-        // Check again if it's still there after delay
-        setTimeout(async () => {
+    // Check again if it's still there after delay
+    setTimeout(async () => {
+        try {
             // Re-query to make sure we have a valid reference, or see if it's gone
             if (!document.contains(button)) {
                 isClaiming = false;
@@ -104,12 +104,12 @@ const claimBonus = async (button: HTMLElement) => {
                 isClaiming = false;
             }, 5000);
 
-        }, delay);
+        } catch (error) {
+            console.error('[Twitch Bonus Claimer] Error claiming bonus:', error);
+            isClaiming = false;
+        }
 
-    } catch (error) {
-        console.error('[Twitch Bonus Claimer] Error claiming bonus:', error);
-        isClaiming = false;
-    }
+    }, delay);
 }
 
 // Start

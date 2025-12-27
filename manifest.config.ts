@@ -5,9 +5,12 @@ const { version } = packageJson
 
 // Convert from Semver (e.g., 0.1.0-beta.6)
 const [major, minor, patch, label = '0'] = version
-    // can only contain digits, dots, or dash
+    // Remove all non-numeric characters except dots and dashes
     .replace(/[^\d.-]+/g, '')
+    // Split by dot or dash
     .split(/[.-]/)
+    // Filter out empty strings
+    .filter(Boolean)
 
 export default defineManifest(async (env) => ({
     manifest_version: 3,
@@ -15,6 +18,7 @@ export default defineManifest(async (env) => ({
         env.mode === 'staging'
             ? '[INTERNAL] Twitch Bonus Claimer'
             : 'Twitch Bonus Claimer',
+    description: 'Twitch Bonus Claimer by Reliq for chromium based browsers. Automatically claim twitch channel points for open twitch streams!',
     // up to four numbers separated by dots
     version: `${major}.${minor}.${patch}.${label}`,
     // semver is OK in "version_name"
@@ -27,7 +31,7 @@ export default defineManifest(async (env) => ({
     action: {
         default_popup: 'src/popup/index.html',
     },
-    permissions: ['storage', 'activeTab'],
+    permissions: ['storage'],
     content_scripts: [
         {
             matches: ['https://*.twitch.tv/*'],
