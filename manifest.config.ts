@@ -19,6 +19,11 @@ export default defineManifest(async (env) => ({
     version: `${major}.${minor}.${patch}.${label}`,
     // semver is OK in "version_name"
     version_name: version,
+    icons: {
+        '16': 'img/icons/icon-16.png',
+        '48': 'img/icons/icon-48.png',
+        '128': 'img/icons/icon-128.png',
+    },
     action: {
         default_popup: 'src/popup/index.html',
     },

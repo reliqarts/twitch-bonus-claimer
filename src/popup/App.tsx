@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ShieldCheck, ShieldAlert, History, Gift } from 'lucide-react'
+import { ShieldCheck, ShieldAlert, History } from 'lucide-react'
 import { storage, ClaimLog } from '../storage'
 
 function App() {
@@ -37,9 +37,7 @@ function App() {
             {/* Header */}
             <div className="bg-slate-50 dark:bg-gray-900 p-4 border-b border-slate-200 dark:border-gray-800 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <div className="bg-purple-600 p-1.5 rounded-lg shadow-sm">
-                        <Gift size={18} className="text-white" />
-                    </div>
+                    <img src="/img/icons/icon-48.png" alt="Logo" className="w-8 h-8 drop-shadow-sm" />
                     <h1 className="font-bold text-lg tracking-tight text-slate-900 dark:text-white">
                         Bonus<span className="text-purple-600 dark:text-purple-400">Claimer</span>
                     </h1>
@@ -118,7 +116,7 @@ function App() {
 
             {/* Footer */}
             <div className="p-2 border-t border-slate-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-900/50 text-center">
-                <p className="text-[10px] text-slate-500 dark:text-gray-600 hover:text-slate-700 dark:hover:text-gray-500 transition-colors cursor-default">Twitch Bonus Claimer by Reliq Arts</p>
+                <p className="text-[10px] text-slate-500 dark:text-gray-600 hover:text-slate-700 dark:hover:text-gray-500 transition-colors cursor-default">A Twitch Bonus Claimer by Reliq</p>
             </div>
         </div>
     )

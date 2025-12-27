@@ -15,3 +15,8 @@ build:
 # Clean build artifacts
 clean:
 	rm -rf dist
+
+# Create distribution zip for Web Store
+zip: build
+	rm -f twitch-bonus-claimer.zip
+	cd dist && zip -r ../twitch-bonus-claimer.zip .
