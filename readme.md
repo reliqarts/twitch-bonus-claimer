@@ -62,7 +62,7 @@ We take privacy seriously. This extension:
 -   Does **not** transmit data to any external server.
 -   Does **not** collect personal information.
 
-See our full [Privacy Policy](PRIVACY.md).
+See our full [Privacy Policy](privacy.md).
 
 ## 👨‍💻 Development
 
