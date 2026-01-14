@@ -26,6 +26,10 @@
 
 ## 🚀 Installation
 
+### From Chrome Web Store (Recommended)
+
+Install the extension directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/ijgpmndgehjalpbomeahkneonihnoggp).
+
 ### From Source (Developer Mode)
 
 1.  **Clone the repository**:
